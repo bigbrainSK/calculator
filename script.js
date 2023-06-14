@@ -9,7 +9,8 @@ document.getElementById('display').innerText = displayVal;
 
 //create the functions that populate the display when a number button is clicked using displayVal 
 //need to create click event listeners buddy
-
+// I need to make it so that when a number is clicked, it populates firstNum, and if 
+// firstNum is already declared, a number populates secondNum
 document.getElementById('clear').addEventListener('click', () => {
           displayVal = '';
           document.getElementById('display').innerText = displayVal;
@@ -49,7 +50,7 @@ document.getElementById('6').addEventListener('click', () => {
 
 document.getElementById('7').addEventListener('click', () => {
       displayVal += '7';
-      ocument.getElementById('display').innerText = displayVal;
+      document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('8').addEventListener('click', () => {
@@ -62,9 +63,38 @@ document.getElementById('9').addEventListener('click', () => {
       document.getElementById('display').innerText = displayVal;
 });
 
+document.getElementById('+').addEventListener('click', () => {
+      operand = '+';
+      displayVal += operand;
+      document.getElementById('display').innerText = displayVal;
+
+});
+
+document.getElementById('-').addEventListener('click', () => {
+      operand = '-';
+      displayVal += operand;
+      document.getElementById('display').innerText = displayVal;
+
+});
+
+document.getElementById('*').addEventListener('click', () => {
+      operand = '*';
+      displayVal += operand;
+      document.getElementById('display').innerText = displayVal;
+
+});
+
+document.getElementById('/').addEventListener('click', () => {
+      operand = '/';
+      displayVal += operand;
+      document.getElementById('display').innerText = displayVal;
+
+});
+
 
 
 const add = function(firstNum, secondNum) {
+      
     return firstNum + secondNum;
   };
   
@@ -83,11 +113,21 @@ const divide = function(firstNum, secondNum) {
 
 
   // 'Create a new function operate that takes an operator 
-//  and 2 numbers and then calls one of the above functions on the numbers'
-// const operate = function(operand, firstNum, secondNum) {
-//     if (operand = '+') return function add(firstNum, secondNum) ;
-//     if (operand = '-') return function subtract(firstNum, secondNum);
-//     if (operand = '*') return function multiply(firstNum, secondNum);
-//     if (operand = '/') return function divide(firstNum, secondNum);
+ //and 2 numbers and then calls one of the above functions on the numbers'
+const operate = function(operand, firstNum, secondNum) {
+    if (operand === '+') {
+      return add(firstNum, secondNum)
+    }; 
 
-// }
+    if (operand === '-') {
+      return subtract(firstNum, secondNum);
+    };
+
+    if (operand === '*') {
+    return multiply(firstNum, secondNum)
+    };
+
+    if (operand === '/') {
+    return  divide(firstNum, secondNum);
+    };
+}
