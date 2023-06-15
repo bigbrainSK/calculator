@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(141, 30, 154);
+    background-color: rgb(68, 154, 147);
     display:flex;  
     justify-content: center; 
     align-items: center; 
@@ -23,8 +23,8 @@ div {
     /* flex: 1 2 auto;  */
 
 
-div.btnContainer {
-    
+.operator {
+    color:orange;
 }
 
 
