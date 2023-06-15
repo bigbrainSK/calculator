@@ -1,7 +1,7 @@
 // create three variables for each part of a calculator expression, first number, the operator,
 // and the second number. 
-let firstNum = 0;       
-let secondNum = 0;
+let firstNum = '';       
+let secondNum = '';
 let operand = '';
 let displayVal =  '';
 document.getElementById('display').innerText = displayVal;
@@ -12,8 +12,8 @@ document.getElementById('display').innerText = displayVal;
 // I need to make it so that when a number is clicked, it populates firstNum, and if 
 // firstNum is already declared, a number populates secondNum
 document.getElementById('clear').addEventListener('click', () => {
-          firstNum = 0;
-          secondNum = 0;
+          firstNum = '';
+          secondNum = '';
           operand = '';
           displayVal = '';
           document.getElementById('display').innerText = displayVal;
@@ -23,65 +23,57 @@ document.getElementById('clear').addEventListener('click', () => {
 // I think i can make an array to store all my numbers but not too sure how to do that
 
 document.getElementById('1').addEventListener('click', () => {
-        if (operand === '') firstNum = 1;
-        if (operand != '') secondNum = 1;
-        displayVal += firstNum;
+        if (operand === '') firstNum += '1', displayVal = firstNum;
+        if (operand != '') secondNum += '1', displayVal = secondNum;
         document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('2').addEventListener('click', () => {
-        if (operand === '') firstNum = 2;
-        if (operand != '') secondNum = 2;
-        displayVal += firstNum;
+        if (operand === '') firstNum += '2', displayVal = firstNum;
+        if (operand != '') secondNum += '2', displayVal = secondNum;
         document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('3').addEventListener('click', () => {
-        if (operand === '') firstNum = 3;
-        if (operand != '') secondNum = 3;
-        displayVal += firstNum;
+        if (operand === '') firstNum += '3', displayVal = firstNum;
+        if (operand != '') secondNum += '3', displayVal = secondNum;
         document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('4').addEventListener('click', () => {
-        if (operand === '') firstNum = 4;
-        if (operand != '') secondNum = 4;
-        displayVal += firstNum;
+        if (operand === '') firstNum += '4', displayVal = firstNum;
+        if (operand != '') secondNum += '4', displayVal = secondNum;
         document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('5').addEventListener('click', () => {
-      if (operand === '') firstNum = 5;
-      if (operand != '') secondNum = 5;
-      displayVal += firstNum;
+      if (operand === '') firstNum += '5', displayVal = firstNum;
+      if (operand != '') secondNum += '5', displayVal = secondNum;
       document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('6').addEventListener('click', () => {
-      if (operand === '') firstNum = 6;
-      if (operand != '') secondNum = 6;
-      displayVal += firstNum;
+      if (operand === '') firstNum += '6', displayVal = firstNum;
+      if (operand != '') secondNum += '6', displayVal = secondNum;
       document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('7').addEventListener('click', () => {
-      if (operand === '') firstNum = 7;
-      if (operand != '') secondNum = 7;
-      displayVal += firstNum;
+      if (operand === '') firstNum += '7', displayVal = firstNum;
+      if (operand != '') secondNum += '7', displayVal = secondNum;
+      
       document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('8').addEventListener('click', () => {
-      if (operand === '') firstNum = 8;
-      if (operand != '') secondNum = 8;
-      displayVal += firstNum;
+      if (operand === '') firstNum += '8', displayVal = firstNum;
+      if (operand != '') secondNum += '8', displayVal = secondNum;
       document.getElementById('display').innerText = displayVal;
 });
 
 document.getElementById('9').addEventListener('click', () => {
-      if (operand === '') firstNum = 9;
-      if (operand != '') secondNum = 9;
-      displayVal += firstNum;
+      if (operand === '') firstNum += '9', displayVal = firstNum;
+      if (operand != '') secondNum += '9', displayVal = secondNum;
       document.getElementById('display').innerText = displayVal;
 });
 

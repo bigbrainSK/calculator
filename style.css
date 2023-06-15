@@ -16,8 +16,12 @@ div {
   height: 17em;
   width:8em;
   /*height:15em; */
-   flex-wrap:wrap; 
-   
+  flex-wrap:wrap; 
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 8%;
+  border-bottom-right-radius: 8%;
+
 }
 /* .calculator>* {
     /* flex: 1 2 auto;  */
