@@ -4,6 +4,7 @@ let firstNum = '';
 let secondNum = '';
 let operand = '';
 let displayVal =  '';
+
 document.getElementById('display').innerText = displayVal;
 
 
@@ -114,41 +115,61 @@ document.getElementById('=').addEventListener('click', () => {
 
 });
 
+  // 'Create a new function operate that takes an operator 
+ //and 2 numbers and then calls one of the above functions on the numbers'
+ //i think I need to make the firstNum and secondNum into ints, otherwise answer will just be
+ // concatenated 
+
+const operate = function(operand, firstParsed, secondParsed) {
+      if (operand === '+') {
+        
+        return add(firstParsed, secondParsed);
+      };
+      
+      if (operand === '-') {
+        return subtract(firstParsed, secondParsed);
+      };
+  
+      if (operand === '*') {
+      return multiply(firstParsed, secondParsed)
+      };
+  
+      if (operand === '/') {
+      return  divide(firstParsed, secondParsed);
+      };
+  };
 
 const add = function(firstNum, secondNum) {
-    return firstNum + secondNum;
+      let firstParsed = parseInt(firstNum);
+      let secondParsed = parseInt(secondNum);
+
+    return firstParsed + secondParsed ;
   };
   
 const subtract = function(firstNum, secondNum) {
-    return firstNum - secondNum;
+      let firstParsed = parseInt(firstNum);
+      let secondParsed = parseInt(secondNum);
+
+    return firstParsed - secondParsed;
   };
   
 const multiply = function(firstNum, secondNum) {
-      return firstNum * secondNum;
+      let firstParsed = parseInt(firstNum);
+      let secondParsed = parseInt(secondNum);
+
+      return firstParsed * secondParsed;
   };
   
 const divide = function(firstNum, secondNum) {
-      return firstNum / secondNum;
+      let firstParsed = parseInt(firstNum);
+      let secondParsed = parseInt(secondNum);
+
+      return firstParsed / secondParsed;
   };
 
 
 
   // 'Create a new function operate that takes an operator 
  //and 2 numbers and then calls one of the above functions on the numbers'
-const operate = function(operand, firstNum, secondNum) {
-    if (operand === '+') {
-      return add(firstNum, secondNum)
-    }; 
-
-    if (operand === '-') {
-      return subtract(firstNum, secondNum);
-    };
-
-    if (operand === '*') {
-    return multiply(firstNum, secondNum)
-    };
-
-    if (operand === '/') {
-    return  divide(firstNum, secondNum);
-    };
-}
+ //i think I need to make the firstNum and secondNum into ints, otherwise answer will just be
+ // concatenated 
