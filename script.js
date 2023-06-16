@@ -4,7 +4,9 @@ let firstNum = '';
 let secondNum = '';
 let operand = '';
 let displayVal =  '';
-
+let firstParsed = '';
+let secondParsed = '';
+let solution = '';
 document.getElementById('display').innerText = displayVal;
 
 
@@ -111,7 +113,10 @@ document.getElementById('/').addEventListener('click', () => {
 });
 
 document.getElementById('=').addEventListener('click', () => {
-      displayVal =  operate(operand, firstNum, secondNum);
+      solution  =  operate(operand, firstNum, secondNum);
+      displayVal = solution;
+      document.getElementById('display').innerText = displayVal;
+
 
 });
 
@@ -140,29 +145,29 @@ const operate = function(operand, firstParsed, secondParsed) {
   };
 
 const add = function(firstNum, secondNum) {
-      let firstParsed = parseInt(firstNum);
-      let secondParsed = parseInt(secondNum);
+       firstParsed = parseInt(firstNum);
+       secondParsed = parseInt(secondNum);
 
     return firstParsed + secondParsed ;
   };
   
 const subtract = function(firstNum, secondNum) {
-      let firstParsed = parseInt(firstNum);
-      let secondParsed = parseInt(secondNum);
+       firstParsed = parseInt(firstNum);
+       secondParsed = parseInt(secondNum);
 
     return firstParsed - secondParsed;
   };
   
 const multiply = function(firstNum, secondNum) {
-      let firstParsed = parseInt(firstNum);
-      let secondParsed = parseInt(secondNum);
+      firstParsed = parseInt(firstNum);
+      secondParsed = parseInt(secondNum);
 
       return firstParsed * secondParsed;
   };
   
 const divide = function(firstNum, secondNum) {
-      let firstParsed = parseInt(firstNum);
-      let secondParsed = parseInt(secondNum);
+      firstParsed = parseInt(firstNum);
+      secondParsed = parseInt(secondNum);
 
       return firstParsed / secondParsed;
   };
