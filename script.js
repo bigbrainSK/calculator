@@ -19,6 +19,9 @@ document.getElementById('clear').addEventListener('click', () => {
           secondNum = '';
           operand = '';
           displayVal = '';
+          firstParsed = '';
+          secondParsed = '';
+          solution = '';
           document.getElementById('display').innerText = displayVal;
 
 });
