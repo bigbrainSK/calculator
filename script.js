@@ -118,6 +118,8 @@ document.getElementById('/').addEventListener('click', () => {
 document.getElementById('=').addEventListener('click', () => {
       solution  =  operate(operand, firstNum, secondNum);
       displayVal = solution;
+      firstNum = solution;
+      secondNum = '';
       document.getElementById('display').innerText = displayVal;
 
 
