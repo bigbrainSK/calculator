@@ -26,100 +26,42 @@ document.getElementById('clear').addEventListener('click', () => {
 
 });
 
-// I think i can make an array to store all my numbers but not too sure how to do that
+const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
 
-document.getElementById('1').addEventListener('click', () => {
-        if (operand === '') firstNum += '1', displayVal = firstNum;
-        if (operand != '') secondNum += '1', displayVal = secondNum;
-        document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('2').addEventListener('click', () => {
-        if (operand === '') firstNum += '2', displayVal = firstNum;
-        if (operand != '') secondNum += '2', displayVal = secondNum;
-        document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('3').addEventListener('click', () => {
-        if (operand === '') firstNum += '3', displayVal = firstNum;
-        if (operand != '') secondNum += '3', displayVal = secondNum;
-        document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('4').addEventListener('click', () => {
-        if (operand === '') firstNum += '4', displayVal = firstNum;
-        if (operand != '') secondNum += '4', displayVal = secondNum;
-        document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('5').addEventListener('click', () => {
-      if (operand === '') firstNum += '5', displayVal = firstNum;
-      if (operand != '') secondNum += '5', displayVal = secondNum;
+nums.forEach(nums => {
+  document.getElementById(nums).addEventListener('click', () => {
+      if (operand === '') firstNum += nums, displayVal = firstNum;
+      if (operand != '') secondNum += nums, displayVal = secondNum;
+      if (secondNum != '') solution  =  Math.round(operate(operand, firstNum, secondNum) * 100)/100 ;
+      if (solution != '') firstNum = solution; secondNum = '';
       document.getElementById('display').innerText = displayVal;
-});
+  });
+})
 
-document.getElementById('6').addEventListener('click', () => {
-      if (operand === '') firstNum += '6', displayVal = firstNum;
-      if (operand != '') secondNum += '6', displayVal = secondNum;
-      document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('7').addEventListener('click', () => {
-      if (operand === '') firstNum += '7', displayVal = firstNum;
-      if (operand != '') secondNum += '7', displayVal = secondNum;
-      
-      document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('8').addEventListener('click', () => {
-      if (operand === '') firstNum += '8', displayVal = firstNum;
-      if (operand != '') secondNum += '8', displayVal = secondNum;
-      document.getElementById('display').innerText = displayVal;
-});
-
-document.getElementById('9').addEventListener('click', () => {
-      if (operand === '') firstNum += '9', displayVal = firstNum;
-      if (operand != '') secondNum += '9', displayVal = secondNum;
-      document.getElementById('display').innerText = displayVal;
-});
+// document.getElementById('0').addEventListener('click', () => {
+//       if (operand === '') firstNum += 0, displayVal = firstNum;
+//       if (operand != '') secondNum += 0, displayVal = secondNum;
+//       document.getElementById('display').innerText = displayVal;
+// });
 
 
-//step 6, need to store firstNum when operator is clicked, then also save which operator
-// has been chosen and then operate() on them when user presses '=' key 
-document.getElementById('+').addEventListener('click', () => {
+const operators = ['+', '-', '*', "/"];
 
-      operand = '+';
+operators.forEach(operators => {
+document.getElementById(operators).addEventListener('click', () => {
+      operand = operators;
       displayVal += operand;
       document.getElementById('display').innerText = displayVal;
-
+  })
 });
 
-document.getElementById('-').addEventListener('click', () => {
-      operand = '-';
-      displayVal += operand;
-      document.getElementById('display').innerText = displayVal;
-
-});
-
-document.getElementById('*').addEventListener('click', () => {
-      operand = '*';
-      displayVal += operand;
-      document.getElementById('display').innerText = displayVal;
-
-});
-
-document.getElementById('/').addEventListener('click', () => {
-      operand = '/';
-      displayVal += operand;
-      document.getElementById('display').innerText = displayVal;
-
-});
 
 document.getElementById('=').addEventListener('click', () => {
-      solution  =  operate(operand, firstNum, secondNum);
+      if(operand != '') displayVal = '';        //need to make = not do anything if pressed before a second number
+      if(operand === '/' && secondNum === '0') alert('try again buster'), operand = '', secondNum = '';
       displayVal = solution;
       firstNum = solution;
-      secondNum = '';
+      //secondNum = '';
       document.getElementById('display').innerText = displayVal;
 
 
@@ -176,6 +118,74 @@ const divide = function(firstNum, secondNum) {
 
       return firstParsed / secondParsed;
   };
+
+
+
+
+
+// document.getElementById('1').addEventListener('click', () => {
+//         if (operand === '') firstNum += '1', displayVal = firstNum;
+//         if (operand != '') secondNum += '1', displayVal = secondNum;
+//         if (firstParsed != '')  
+//         solution  =  operate(operand, firstNum, secondNum);
+//         document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('2').addEventListener('click', () => {
+//         if (operand === '') firstNum += '2', displayVal = firstNum;
+//         if (operand != '') secondNum += '2', displayVal = secondNum;
+//         solution  =  operate(operand, firstNum, secondNum);
+//         document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('3').addEventListener('click', () => {
+//         if (operand === '') firstNum += '3', displayVal = firstNum;
+//         if (operand != '') secondNum += '3', displayVal = secondNum;
+//         solution  =  operate(operand, firstNum, secondNum);
+//         document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('4').addEventListener('click', () => {
+//         if (operand === '') firstNum += '4', displayVal = firstNum;
+//         if (operand != '') secondNum += '4', displayVal = secondNum;
+//         solution  =  operate(operand, firstNum, secondNum);
+//         document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('5').addEventListener('click', () => {
+//       if (operand === '') firstNum += '5', displayVal = firstNum;
+//       if (operand != '') secondNum += '5', displayVal = secondNum;
+//       solution  =  operate(operand, firstNum, secondNum); 
+//       document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('6').addEventListener('click', () => {
+//       if (operand === '') firstNum += '6', displayVal = firstNum;
+//       if (operand != '') secondNum += '6', displayVal = secondNum;
+//       document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('7').addEventListener('click', () => {
+//       if (operand === '') firstNum += '7', displayVal = firstNum;
+//       if (operand != '') secondNum += '7', displayVal = secondNum;
+//       document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('8').addEventListener('click', () => {
+//       if (operand === '') firstNum += '8', displayVal = firstNum;
+//       if (operand != '') secondNum += '8', displayVal = secondNum;
+//       document.getElementById('display').innerText = displayVal;
+// });
+
+// document.getElementById('9').addEventListener('click', () => {
+//       if (operand === '') firstNum += '9', displayVal = firstNum;
+//       if (operand != '') secondNum += '9', displayVal = secondNum;
+//       document.getElementById('display').innerText = displayVal;
+// });
+
+
+//step 6, need to store firstNum when operator is clicked, then also save which operator
+// has been chosen and then operate() on them when user presses '=' key 
 
 
 
