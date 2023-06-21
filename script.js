@@ -114,4 +114,3 @@ const divide = function(firstNum, secondNum) {
   };
 
 
-/
